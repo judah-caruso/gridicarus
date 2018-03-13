@@ -1,8 +1,8 @@
 {
-  "name": "icarus",
-  "version": "0.0.1",
-  "description": "A CSS framework for quick and painless CSS Grids",
-  "main": "index.js",
+  "name": "gridicarus",
+  "version": "0.1.1",
+  "description": "A structural approach to CSS Grids.",
+  "style": "dist/gridicarus.css",
   "scripts": {
     "test": "npm test && echo Tests passed!",
     "build:dev": "node-sass --include-path scss src/gridicarus.scss dist/gridicarus.css --output-style expanded",
@@ -12,6 +12,15 @@
   },
   "author": "Judah Caruso Rodriguez <judah@0px.moe> (http://0px.moe)",
   "license": "MIT",
+  "keywords": [
+    "css grids",
+    "grid layout",
+    "functional css",
+    "framework",
+    "css",
+    "scss",
+    "gridicarus"
+  ],
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
