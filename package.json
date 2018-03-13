@@ -1,0 +1,22 @@
+{
+  "name": "icarus",
+  "version": "0.0.1",
+  "description": "A CSS framework for quick and painless CSS Grids",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test && echo Tests passed!",
+    "build:dev": "node-sass --include-path scss src/gridicarus.scss dist/gridicarus.css --output-style expanded",
+    "build:prod": "node-sass --include-path scss src/gridicarus.scss dist/gridicarus.min.css --output-style compressed",
+    "build:git": "npm run build:dev && npm run build:prod",
+    "watch": "nodemon -e scss -x \"npm run build:dev\""
+  },
+  "author": "Judah Caruso Rodriguez <judah@0px.moe> (http://0px.moe)",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1"
+  }
+}
