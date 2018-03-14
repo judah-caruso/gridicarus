@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="docs/dist/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 					</ul>
 				</div>
 				<div class="p1 white bg-navy">
-					<p class="center">The documentation below is currently unfinished and <span class="underline">is subject to</span> change.</p>
+					<p class="center">Gridicarus is still in development. Because of this, the documentation below <span class="underline">is subject to change</span>.</p>
 				</div>
 			</div>
 			<!-- CONTENT  -->
@@ -56,7 +56,7 @@
 					</section>
 					<section id="grid-parent">
 						<h1 class="mt4 mb0 pt4 border-top border-silver"><a href="#grid-parent">Grid-Parent</a></h1>
-						<p class="mb3">Defining a grid layout.</p>
+						<p class="mb3">Defining a grid.</p>
 						<p class="justify mt2">To create a new grid, simply use the <code>.grid-parent</code> class:</p>
 						<div class="border border-silver rounded">
 						<div class="grid-parent h-fill2">
@@ -78,19 +78,70 @@
 							</div>
 						</div>
 					</div>
-					<p class="justify mt2">This will create a 1:1 grid that densifies its children.</p>
-					<p class="justify mb3">If a parent grid wants to structure its children, it can do so with these options:</p>
+					<p class="justify mt2 mb3">This will create a 1:1 grid that densifies its children. A parent grid can structure its children using the following classes:</p>
 
 					<ul class="list-reset ml3">
-						<li><code>.h-fill(1-9)</code> - Horizontally fills empty grid cells.</li>
-						<li class="mt2"><code>.v-fill(1-9)</code> - Vertically fills empty grid cells.</li>
-						<li class="mt2"><code>.h-gap-size(1-9)</code> - Creates a horizontal gap for each child.</li>
-						<li class="mt2"><code>.v-gap-size(1-9)</code> - Creates a vertical gap for each child.</li>
+						<li><code>.h-fill(1-9)</code> - Creates (1-9) empty horizontal cells.</li>
+						<li class="mt2"><code>.v-fill(1-9)</code> - Creates (1-9) empty vertical cells.</li>
+						<li class="mt2"><code>.h-gap-size(1-9)</code> - Adds a horizontal gap <span class="muted">(rem)</span> for each cell.</li>
+						<li class="mt2"><code>.v-gap-size(1-9)</code> - Adds a vertical gap <span class="muted">(rem)</span> for each cell.</li>
 					</ul>
 
-					<p class="justify mt3">Here's a basic example of <span class="italic">this</span> website's layout using the options above:</p> 
+					<p class="justify mt3">We can use these classes to control the flow of our grid layout or give the cells some spacing. Here's an example:</p> 
 					
 
+<!-- PARENT GRID EXAMPLE -->
+					<div class="border border-silver rounded">
+					<div class="grid-parent h-fill2">
+					<div class="grid-child h-span1 example">	
+<pre class="m2">
+&lt;div class="grid-parent h-fill2 h-gap-size9"&gt;
+
+  &lt;div class="grid-child #1 v-span1 box-lime"&gt;
+  	Area Left
+  &lt;/div&gt;
+  &lt;div class="grid-child #2 v-span1 box-blue"&gt;
+  	Area Right
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>
+</div>
+					<div class="grid-parent h-fill2 h-gap-size9">
+					<div class="grid-child #1 v-span1 box-lime">
+						<span class="example-text">Area Left</span>
+					</div>
+					<div class="grid-child #2 v-span1 box-blue">
+						<span class="example-text">Area Right</span>
+					</div>
+					</div>
+					</div>
+					</div>
+					<p class="justify">We use <code>.h-fill2</code> to specify that we'd like two horizontally stacked cells, and <code>.h-gap-size9</code> to specify that we'd like the smallest <span class="muted">(9)</span> amount of spacing between cells.</p>
+					<p class="justify pb1">Gridicarus uses <span class="italic">"h-styled"</span> sizing. This means that the <span class="underline">largest number is the smallest size</span>, and the <span class="underline">smallest number is the largest size</span>:</p>
+					<ul class="list-reset ml3 ">
+						<li><code>(v/h)-gap-size1</code> = 3rem</li>
+						<li class="mt2"><code>(v/h)-gap-size2</code> = 2.5rem</li>
+						<li class="mt2"><code>(v/h)-gap-size3</code> = 2rem</li>
+						<li class="mt2"><code>(v/h)-gap-size4</code> = 1.5rem</li>
+						<li class="mt2"><code>(v/h)-gap-size5</code> = 1.25rem</li>
+						<li class="mt2"><code>(v/h)-gap-size6</code> = 1rem</li>
+						<li class="mt2"><code>(v/h)-gap-size7</code> = 0.75rem</li>
+						<li class="mt2"><code>(v/h)-gap-size8</code> = 0.50rem</li>
+						<li class="mt2"><code>(v/h)-gap-size9</code> = 0.25rem</li>
+					</ul>
+				</section>
+				<section id="grid-child">
+						<h1 class="mt4 mb0"><a href="#grid-child">Grid-Child</a></h1>
+						<p class="mb3">Customizing the grid layout.</p>
+						<p class="justify mt2">Once the grid is setup, we can begin to develop it further using the <code>.grid-child</code> class. 
+							If we'd like to control the order of how children are placed, every child in the grid must have the <code>.grid-child</code> class followed by the <code>#1-10</code> class. You may also use <code>.grid-child(1-9)</code> instead.
+							Here's an example of this website's layout using the options above.
+						</p> 
+
+						<p class="justify">
+							To make children larger than others, use the <code>.h-span(1-10)</code> or <code>.v-span(1-10)</code> classes. Here's an example:
+						</p>
 
 <!-- CHILD GRID EXAMPLE -->
 					<div class="border border-silver rounded">
@@ -105,10 +156,10 @@
   &lt;div class="grid-child #2 h-span2 box-blue"&gt; 
     Body
   &lt;/div&gt;
-  &lt;div class="grid-child #4 box-grey"&gt;
+  &lt;div class="grid-child4 box-grey"&gt;
     Footer Left
   &lt;/div&gt;
-  &lt;div class="grid-child #4 box-silver"&gt;
+  &lt;div class="grid-child4 box-silver"&gt;
     Footer Right
   &lt;/div&gt;
 
@@ -122,18 +173,120 @@
 					<div class="grid-child #2 h-span2 box-blue">
 						<span class="example-text">Body</span>
 					</div>
-					<div class="grid-child #4 box-grey">
+					<div class="grid-child4 box-grey">
 						<span class="example-text">Footer Left</span>
 					</div>
-					<div class="grid-child #4 box-silver">
+					<div class="grid-child4 box-silver">
 						<span class="example-text">Footer Right</span>
 					</div>
 					</div>
 					</div>
 					</div>
 					<p class="justify mt2">
-						Notice that we used <code>.h-span2</code> to dictate that wanted 2 evenly sized rows.
-						We have to assign <code>.h-span(#)</code> to every child in the grid, unless we have an even number of children. In which case we just assign <code>.h-span(#)</code> to each child we'd like to resize.</p>
+						Notice that <code>.h-span2</code> is used to dictate two children spanning 2/4 cells. We created four cells by having four children of the parent grid. If the number of children is even, <code>.h-span(1-10)</code> only needs to be added to the children we'd like to resize</code>. If not, you must specify the size for each child.
+						Gridicarus will always stack children <span class="bold">vertically</span> if not otherwise specified.
+					</p>
+					</section>
+
+					<section id="boxes">
+						<h1 class="mt4 mb0"><a href="#boxes">Boxes</a></h1>
+						<p class="mb3">Quickly design grid layouts.</p>
+						<p class="justify mt2">
+							For quick prototyping and designing, Gridicarus comes with colored boxes. These allow you to color any <code>.child-grid</code> by just adding the following classes to it: 
+						</p>
+<!-- BOXES EXAMPLE -->
+					<div class="border border-silver rounded">
+					<div class="grid-parent h-fill2">
+					<div class="grid-child h-span1 example">	
+<pre class="m2">
+box-navy: 		#001f3f
+box-blue: 		#0074D9
+box-aqua: 		#7FDBFF
+box-teal: 		#39CCCC
+box-olive: 		#3D9970
+box-green: 		#2ECC40
+box-lime: 		#01FF70
+box-yellow:		#FFDC00
+box-orange:		#FF851B
+box-red: 		#FF4136
+box-maroon:		#85144b
+box-fuchsia:		#F012BE
+box-purple:		#B10DC9
+box-black: 		#111111
+box-grey: 		#AAAAAA
+box-gray: 		#AAAAAA
+box-silver:		#DDDDDD
+box-white: 		#FFFFFF
+</pre>
+</div>
+					<div class="grid-parent h-fill4">
+					<div class="grid-child box-navy">
+						<span class="example-text">box-navy</span>
+					</div>
+					<div class="grid-child box-blue">
+						<span class="example-text">box-blue</span>
+					</div>
+					<div class="grid-child box-aqua">
+						<span class="example-text">box-aqua</span>
+					</div>
+					<div class="grid-child box-teal">
+						<span class="example-text">box-teal</span>
+					</div>
+					<div class="grid-child box-olive">
+						<span class="example-text">box-olive</span>
+					</div>
+					<div class="grid-child box-green">
+						<span class="example-text">box-green</span>
+					</div>
+					<div class="grid-child box-lime">
+						<span class="example-text">box-lime</span>
+					</div>
+					<div class="grid-child box-yellow">
+						<span class="example-text">box-yellow</span>
+					</div>
+					<div class="grid-child box-orange">
+						<span class="example-text">box-orange</span>
+					</div>
+					<div class="grid-child box-red">
+						<span class="example-text">box-red</span>
+					</div>
+					<div class="grid-child box-maroon">
+						<span class="example-text">box-maroon</span>
+					</div>
+					<div class="grid-child box-fuchsia">
+						<span class="example-text">box-fuchsia</span>
+					</div>
+					<div class="grid-child box-purple">
+						<span class="example-text">box-purple</span>
+					</div>
+					<div class="grid-child box-black">
+						<span class="example-text">box-black</span>
+					</div>
+					<div class="grid-child box-grey">
+						<span class="example-text">box-grey</span>
+					</div>
+					<div class="grid-child box-gray">
+						<span class="example-text">box-gray</span>
+					</div>
+					<div class="grid-child h-span2 box-silver">
+						<span class="example-text">box-silver</span>
+					</div>
+					<div class="grid-child h-span2 box-white">
+						<span class="example-text">box-white</span>
+					</div>
+					</div>
+					</div>
+					</div>
+					</section>
+					<section id="other">
+						<h1 class="mt4 mb0"><a href="#other">Other</a></h1>
+						<p class="justify mt2">
+							Gridicarus was inspired by the following projects!
+						</p>
+						<ul class="list-reset ml3">
+							<li><a href="http://basscss.com/">Basscss</a></li>
+							<li><a href="https://bulma.io/">Bulma</a></li>
+						</ul>
 					</section>
 				</div>
 			</div>
