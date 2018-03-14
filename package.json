@@ -1,6 +1,7 @@
 {
   "name": "gridicarus",
   "version": "0.1.3",
+  "homepage": "https://kyoto-shift.github.io/gridicarus",
   "description": "A structural approach to CSS Grids.",
   "style": "dist/gridicarus.css",
   "scripts": {
