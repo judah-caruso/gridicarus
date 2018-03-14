@@ -1,6 +1,6 @@
 {
   "name": "gridicarus",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A structural approach to CSS Grids.",
   "style": "dist/gridicarus.css",
   "scripts": {
