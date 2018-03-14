@@ -21,6 +21,10 @@
     "scss",
     "gridicarus"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyoto-shift/gridicarus"
+  },
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
