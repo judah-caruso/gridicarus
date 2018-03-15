@@ -4,7 +4,7 @@ Gridicarus is a structural approach to [CSS Grids](https://www.w3.org/TR/css-gri
 
 [![npm version](https://badge.fury.io/js/gridicarus.svg)](https://badge.fury.io/js/gridicarus)
 
-
+<a href="https://kyoto-shift.github.io/gridicarus"><img src="https://raw.githubusercontent.com/kyoto-shift/gridicarus/master/logo.png" alt="Gridicarus: A structural approach to CSS Grids" style="max-width:100%;"></a>
 
 ## Installation
 
