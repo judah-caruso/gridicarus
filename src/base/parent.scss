@@ -1,12 +1,14 @@
 @charset "utf-8";
 
-.grid-parent {
+.parent {
 	display: grid;
-    grid-auto-flow: dense; // <- gives a more flexible grid layout
+    &-dense {
+        grid-auto-flow: dense; // <- fills grid cells automatically
+    }
 }
 
 // horizontally fill grid cells
-.h-fill {
+.parent-hfill {
     &1  { grid-template-columns: repeat(1, 1fr);    }
     &2  { grid-template-columns: repeat(2, 1fr);    }
     &3  { grid-template-columns: repeat(3, 1fr);    }
@@ -17,10 +19,15 @@
     &8  { grid-template-columns: repeat(8, 1fr);    }
     &9  { grid-template-columns: repeat(9, 1fr);    }
     &10 { grid-template-columns: repeat(10, 1fr);   }
+    &11 { grid-template-columns: repeat(11, 1fr);   }
+    &12 { grid-template-columns: repeat(12, 1fr);   }
+    &13 { grid-template-columns: repeat(13, 1fr);   }
+    &14 { grid-template-columns: repeat(14, 1fr);   }
+    &15 { grid-template-columns: repeat(15, 1fr);   }
 }
 
 // vertically fill grid cells
-.v-fill {
+.parent-vfill {
     &1  { grid-template-rows: repeat(1, 1fr);    }
     &2  { grid-template-rows: repeat(2, 1fr);    }
     &3  { grid-template-rows: repeat(3, 1fr);    }
@@ -31,10 +38,15 @@
     &8  { grid-template-rows: repeat(8, 1fr);    }
     &9  { grid-template-rows: repeat(9, 1fr);    }
     &10 { grid-template-rows: repeat(10, 1fr);   }
+    &11 { grid-template-rows: repeat(11, 1fr);   }
+    &12 { grid-template-rows: repeat(12, 1fr);   }
+    &13 { grid-template-rows: repeat(13, 1fr);   }
+    &14 { grid-template-rows: repeat(14, 1fr);   }
+    &15 { grid-template-rows: repeat(15, 1fr);   }
 }
 
-// directions flipped for better usability
-.h-gap-size {
+// horizontal gap between grid cells
+.parent-hgap {
     &1 { grid-column-gap: $size-1 }
     &2 { grid-column-gap: $size-2 }
     &3 { grid-column-gap: $size-3 }
@@ -46,7 +58,8 @@
     &9 { grid-column-gap: $size-9 }
 }
 
-.v-gap-size {
+// vertical gap between grid cells
+.parent-vgap {
     &1 { grid-row-gap: $size-1; }
     &2 { grid-row-gap: $size-2; }
     &3 { grid-row-gap: $size-3; }

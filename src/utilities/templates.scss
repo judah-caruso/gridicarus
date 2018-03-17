@@ -1,9 +1,13 @@
 @charset "utf-8";
 
-// grid-templates coming soon
-// .template {
-//     &1 {
-//     }
-//     &2 {
-//     }
-// }
+.template {
+    &1 {
+        grid-template-columns: repeat(3, 25%);
+    }
+    &2 {
+        //template 2
+    }
+    &3 {
+        //template 3
+    }
+}

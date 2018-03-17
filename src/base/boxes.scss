@@ -18,3 +18,37 @@
     &-silver    { background-color: $color-silver;  }
     &-white     { background-color: $color-white;   color: $color-black; }
 }
+
+.extext {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
+    Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji",
+    "Segoe UI Emoji","Segoe UI Symbol";
+    &-center{
+        @extend .extext;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.o {
+    opacity: $full;
+    &1 { opacity: $full/2;  }
+    &2 { opacity: $full/4;  }
+    &3 { opacity: $full/6;  }
+    &4 { opacity: $full/8;  }
+    &5 { opacity: 0;        }
+}
+
+.r {
+    &c { border-radius: 50%;     }
+    &1 { border-radius: $size-1; }
+    &2 { border-radius: $size-2; }
+    &3 { border-radius: $size-3; }
+    &4 { border-radius: $size-4; }
+    &5 { border-radius: $size-5; }
+    &6 { border-radius: $size-6; }
+    &7 { border-radius: $size-7; }
+    &8 { border-radius: $size-8; }
+    &9 { border-radius: $size-9; }
+}
