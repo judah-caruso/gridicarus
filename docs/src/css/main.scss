@@ -1,5 +1,5 @@
 :global{
-    @import "~gridicarus/dist/gridicarus.css";
+    @import "~gridicarus/dist/gridicarus.min.css";
     @import "~basscss/css/basscss.css";
     @import "~basscss-colors/css/colors.css";
     @import "~basscss-btn/css/btn.css";
@@ -12,6 +12,7 @@ $font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, A
 // VARIABLES
 $t-time: 100ms;
 $silver: #DDDDDD;
+
 $link-light:    #ffffff;
 $link-regular:  #0074D9;
 $link-dark:     #001F3F;
