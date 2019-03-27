@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-// mrms colors 
+// mrms colors
 $color-navy:    #001f3f !default;
 $color-blue:    #0074D9 !default;
 $color-aqua:    #7FDBFF !default;
@@ -36,8 +36,9 @@ $size-9: 0.25rem    !default;
 
 // standard breakpoints (currently unused)
 $breakpoints: (
-    "tablet":       789px,
-    "desktop":      960px,
-    "widescreen":   1152px,
-    "fullhd":       1344px
+    "mobile":       768px,
+    "tablet":       769px,
+    "desktop":      1024px,
+    "widescreen":   1216px,
+    "fullhd":       1408px
 ) !default;

@@ -1,72 +1,114 @@
 @charset "utf-8";
+@import "../utilities/_mixins";
 
 .parent {
 	display: grid;
     &-dense {
-        grid-auto-flow: dense; // <- fills grid cells automatically
+      @extend .parent;
+      grid-auto-flow: dense; // fills grid cells automatically
     }
 }
 
-// horizontally fill grid cells
-.parent-hfill {
-    &1  { grid-template-columns: repeat(1, 1fr);    }
-    &2  { grid-template-columns: repeat(2, 1fr);    }
-    &3  { grid-template-columns: repeat(3, 1fr);    }
-    &4  { grid-template-columns: repeat(4, 1fr);    }
-    &5  { grid-template-columns: repeat(5, 1fr);    }
-    &6  { grid-template-columns: repeat(6, 1fr);    }
-    &7  { grid-template-columns: repeat(7, 1fr);    }
-    &8  { grid-template-columns: repeat(8, 1fr);    }
-    &9  { grid-template-columns: repeat(9, 1fr);    }
-    &10 { grid-template-columns: repeat(10, 1fr);   }
-    &11 { grid-template-columns: repeat(11, 1fr);   }
-    &12 { grid-template-columns: repeat(12, 1fr);   }
-    &13 { grid-template-columns: repeat(13, 1fr);   }
-    &14 { grid-template-columns: repeat(14, 1fr);   }
-    &15 { grid-template-columns: repeat(15, 1fr);   }
+.clear {
+  width: 100%;
+  height: 100%;
+    &-h { width: 100%; }
+    &-v { height: 100%; }
 }
 
-// vertically fill grid cells
-.parent-vfill {
-    &1  { grid-template-rows: repeat(1, 1fr);    }
-    &2  { grid-template-rows: repeat(2, 1fr);    }
-    &3  { grid-template-rows: repeat(3, 1fr);    }
-    &4  { grid-template-rows: repeat(4, 1fr);    }
-    &5  { grid-template-rows: repeat(5, 1fr);    }
-    &6  { grid-template-rows: repeat(6, 1fr);    }
-    &7  { grid-template-rows: repeat(7, 1fr);    }
-    &8  { grid-template-rows: repeat(8, 1fr);    }
-    &9  { grid-template-rows: repeat(9, 1fr);    }
-    &10 { grid-template-rows: repeat(10, 1fr);   }
-    &11 { grid-template-rows: repeat(11, 1fr);   }
-    &12 { grid-template-rows: repeat(12, 1fr);   }
-    &13 { grid-template-rows: repeat(13, 1fr);   }
-    &14 { grid-template-rows: repeat(14, 1fr);   }
-    &15 { grid-template-rows: repeat(15, 1fr);   }
+// inner padding
+.pad- {
+  &1 { padding: $size-1; }
+  &2 { padding: $size-2; }
+  &3 { padding: $size-3; }
+  &4 { padding: $size-4; }
+  &5 { padding: $size-5; }
+  &6 { padding: $size-6; }
+  &7 { padding: $size-7; }
+  &8 { padding: $size-8; }
+  &9 { padding: $size-9; }
+}
+
+// responsive hiding
+.hide {
+  display: none;
+    &-mobile     { @include response("mobile")     { display: none; } }
+    &-tablet     { @include response("tablet")     { display: none; } }
+    &-desktop    { @include response("desktop")    { display: none; } }
+    &-widescreen { @include response("widescreen") { display: none; } }
+    &-fullhd     { @include response("fullhd")     { display: none; } }
+}
+
+// responsive template change
+.collapse {
+  grid-template-columns: repeat(1, 100%) !important;
+    &-mobile     { @include response("tablet")     { grid-template-columns: repeat(1, 100%) !important; } }
+    &-tablet     { @include response("tablet")     { grid-template-columns: repeat(1, 100%) !important; } }
+    &-desktop    { @include response("desktop")    { grid-template-columns: repeat(1, 100%) !important; } }
+    &-widescreen { @include response("widescreen") { grid-template-columns: repeat(1, 100%) !important; } }
+    &-fullhd     { @include response("fullhd")     { grid-template-columns: repeat(1, 100%) !important; } }
+}
+
+// horizontally make grid cells
+.h-fill- {
+  &1  { grid-template-columns: repeat(1, 1fr);  }
+  &2  { grid-template-columns: repeat(2, 1fr);  }
+  &3  { grid-template-columns: repeat(3, 1fr);  }
+  &4  { grid-template-columns: repeat(4, 1fr);  }
+  &5  { grid-template-columns: repeat(5, 1fr);  }
+  &6  { grid-template-columns: repeat(6, 1fr);  }
+  &7  { grid-template-columns: repeat(7, 1fr);  }
+  &8  { grid-template-columns: repeat(8, 1fr);  }
+  &9  { grid-template-columns: repeat(9, 1fr);  }
+  &10 { grid-template-columns: repeat(10, 1fr); }
+  &11 { grid-template-columns: repeat(11, 1fr); }
+  &12 { grid-template-columns: repeat(12, 1fr); }
+  &13 { grid-template-columns: repeat(13, 1fr); }
+  &14 { grid-template-columns: repeat(14, 1fr); }
+  &15 { grid-template-columns: repeat(15, 1fr); }
+}
+
+// vertically make grid cells
+.v-fill- {
+  &1  { grid-template-rows: repeat(1, 1fr);  }
+  &2  { grid-template-rows: repeat(2, 1fr);  }
+  &3  { grid-template-rows: repeat(3, 1fr);  }
+  &4  { grid-template-rows: repeat(4, 1fr);  }
+  &5  { grid-template-rows: repeat(5, 1fr);  }
+  &6  { grid-template-rows: repeat(6, 1fr);  }
+  &7  { grid-template-rows: repeat(7, 1fr);  }
+  &8  { grid-template-rows: repeat(8, 1fr);  }
+  &9  { grid-template-rows: repeat(9, 1fr);  }
+  &10 { grid-template-rows: repeat(10, 1fr); }
+  &11 { grid-template-rows: repeat(11, 1fr); }
+  &12 { grid-template-rows: repeat(12, 1fr); }
+  &13 { grid-template-rows: repeat(13, 1fr); }
+  &14 { grid-template-rows: repeat(14, 1fr); }
+  &15 { grid-template-rows: repeat(15, 1fr); }
 }
 
 // horizontal gap between grid cells
-.parent-hgap {
-    &1 { grid-column-gap: $size-1 }
-    &2 { grid-column-gap: $size-2 }
-    &3 { grid-column-gap: $size-3 }
-    &4 { grid-column-gap: $size-4 }
-    &5 { grid-column-gap: $size-5 }
-    &6 { grid-column-gap: $size-6 }
-    &7 { grid-column-gap: $size-7 }
-    &8 { grid-column-gap: $size-8 }
-    &9 { grid-column-gap: $size-9 }
+.h-gap- {
+  &1 { grid-column-gap: $size-1 }
+  &2 { grid-column-gap: $size-2 }
+  &3 { grid-column-gap: $size-3 }
+  &4 { grid-column-gap: $size-4 }
+  &5 { grid-column-gap: $size-5 }
+  &6 { grid-column-gap: $size-6 }
+  &7 { grid-column-gap: $size-7 }
+  &8 { grid-column-gap: $size-8 }
+  &9 { grid-column-gap: $size-9 }
 }
 
 // vertical gap between grid cells
-.parent-vgap {
-    &1 { grid-row-gap: $size-1; }
-    &2 { grid-row-gap: $size-2; }
-    &3 { grid-row-gap: $size-3; }
-    &4 { grid-row-gap: $size-4; }
-    &5 { grid-row-gap: $size-5; }
-    &6 { grid-row-gap: $size-6; }
-    &7 { grid-row-gap: $size-7; }
-    &8 { grid-row-gap: $size-8; }
-    &9 { grid-row-gap: $size-9; }
+.v-gap- {
+  &1 { grid-row-gap: $size-1; }
+  &2 { grid-row-gap: $size-2; }
+  &3 { grid-row-gap: $size-3; }
+  &4 { grid-row-gap: $size-4; }
+  &5 { grid-row-gap: $size-5; }
+  &6 { grid-row-gap: $size-6; }
+  &7 { grid-row-gap: $size-7; }
+  &8 { grid-row-gap: $size-8; }
+  &9 { grid-row-gap: $size-9; }
 }

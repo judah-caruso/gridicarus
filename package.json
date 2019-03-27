@@ -1,6 +1,6 @@
 {
   "name": "gridicarus",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "homepage": "https://kyoto-shift.github.io/gridicarus",
   "description": "A structural approach to CSS Grids.",
   "style": "dist/gridicarus.css",
@@ -28,9 +28,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
-    "node-sass": "^4.7.2",
-    "nodemon": "^1.17.1"
+    "gulp": "^4.0.0",
+    "gulp-sass": "^3.2.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10"
   }
 }
